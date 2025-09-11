@@ -1,0 +1,174 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+:root {
+     scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    --normal: 400;
+    --lightWeight: 300;
+    --heavyWeight: 700;
+}
+
+
+nav {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+    z-index: 100;
+}
+nav ul {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+nav a {
+    padding: .8rem .5rem;
+    display: block;
+    text-decoration: none;
+    color:rgba(0, 107, 145);
+    font-weight: var(--heavyWeight);
+}
+nav a:hover {
+    background-color:lightblue;
+    color: black
+}
+section#about {
+    background-color: lightblue;
+    height: 100vh;
+    padding: 50px;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+section#about h1 {
+    font-size: 2.5rem;
+}
+section#about h2 {
+    font-size: 1.5rem;
+    color: black;
+}
+section#projects {
+    background-color: #ECF8FD;
+    min-height: 100vh;
+    padding: 50px;
+    text-align: center;
+}
+div.theParent {
+    display: flex;
+    flex-wrap: wrap;
+}
+div.theParent a {
+    flex-basis: 100%;
+    padding: 1rem 2vw;
+}
+div.theParent img {
+    border-radius: 10px 10px 0 0;
+}
+
+.expand-on-hover {
+    position: relative; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+
+.expand-on-hover img {
+    width: 100%; 
+    height: auto;
+    display: block; 
+}
+
+
+.image-overlay-caption {
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 107, 145, 0.6); 
+    color: white; 
+    padding: 10px;
+    box-sizing: border-box; 
+    text-align: center;
+    margin: 0; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Optional: Make the caption's background slightly lighter on hover */
+.expand-on-hover:hover .image-overlay-caption {
+    background-color: rgba(0, 107, 145, 0.7);
+}
+
+/* To ensure the entire figure scales on hover */
+.expand-on-hover:hover {
+    transform: scale(1.1); /* Your existing scale transform */
+    box-shadow: 0 4px 15px rgba(0, 107, 145, 0.5); /* Your existing shadow transform */
+}
+section#projects figure {
+    margin: 0;
+    width: 100%;
+}
+section#projects img {
+    width: 100%;
+    
+}
+section#contact {
+    background-color: lightblue;
+    height: 40vh;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+section#contact h2 {
+    padding: 50px;
+    text-align: center;
+}
+section#contact ul {
+    display: flex;
+    justify-content: space-around;
+    
+}
+section#contact li {
+    list-style-type: none;
+
+}
+section#contact a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    
+}
+section#contact img {
+    height: 40px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    
+}
+section#contact a:hover {
+    color: rgba(0, 107, 145);
+    transform: scale(1.1);
+}
+footer p, footer span {
+    font-size: 1.5rem;
+    text-align: center;
+    color: rgba(0, 107, 145);
+    padding: 1rem 0;
+}
