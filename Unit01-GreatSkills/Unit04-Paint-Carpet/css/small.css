@@ -1,0 +1,82 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+:root {
+    font-family: 'Roboto', sans-serif;
+    --primaryColor: rgba(47, 43, 117, 1);
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 2%;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+
+}
+
+.data {
+    margin: 1rem 4%;
+    padding: 1rem 4%;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.data label {
+    display: block;
+    margin: .5rem 0;
+}
+.data input {
+    width: 60px;
+}
+.data button{
+    width:100%;
+    padding: .5rem 0;
+    margin: 1rem 0;
+    background: grey;
+   background: linear-gradient(rgb(70, 209, 255) 0%, rgba(47, 43, 117, 1) 100%);
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 5px 5px 10px grey;
+    font-weight: 600;
+    font-size: 1-4.rem;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section div {
+    margin: 1rem 4%;
+   flex-basis: 96%;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+section h2 {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+    padding: .5rem 0;
+    background-color: rgba(47, 43, 117, 1);
+    color: white;
+}
+
+section ul {
+    list-style-type: circle;
+}
+
+footer {
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgb(163, 232, 255);
+    padding: 1rem 2%;
+    color: black;
+}

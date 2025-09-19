@@ -56,12 +56,14 @@ button {
 }
 
 #increment-btn {
-    background: #c123d2;
+    background: rgba(47, 43, 117, 1);
+    color: white;
 }
 
 #save-btn {
-    background: #65c0bc;
+    background: rgb(140, 226, 255);
 }
 #save-el {
     font-weight: bold;
 }
+

@@ -33,7 +33,7 @@ nav a {
     padding: .8rem .5rem;
     display: block;
     text-decoration: none;
-    color:rgba(0, 107, 145);
+    color:rgba(47, 43, 117, 1);
     font-weight: var(--heavyWeight);
 }
 nav a:hover {
@@ -41,7 +41,7 @@ nav a:hover {
     color: black
 }
 section#about {
-    background-color: lightblue;
+    background-color: rgb(163, 232, 255);
     height: 100vh;
     padding: 50px;
     text-align: center;
@@ -126,7 +126,7 @@ section#projects img {
     
 }
 section#contact {
-    background-color: lightblue;
+    background-color: rgb(163, 232, 255);
     height: 40vh;
     padding: 50px;
     text-align: center;
@@ -167,8 +167,9 @@ section#contact a:hover {
     transform: scale(1.1);
 }
 footer p, footer span {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
-    color: rgba(0, 107, 145);
+    color: black;
     padding: 1rem 0;
+    background-color: lightblue;
 }

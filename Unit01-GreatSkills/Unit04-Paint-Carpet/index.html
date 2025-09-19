@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+</head>
+<body>
+    <header>
+        <h1>Paint and Flooring Calculator</h1>
+    </header>
+    <main>
+        <div class="data">
+           <label>Room Width <input type="number" id="width"> feet</label>
+           <label>Room Depth <input type="number" id="depth"> feet</label>
+           <label>Wall Height <input type="number" id="height"> feet</label>
+           Paint Quality <select id="quality">
+                <option value="" disabled selected>Select a Paint Quality</option>
+                <option value="600">Premium</option>
+                <option value="500">Standard</option>
+                <option value="400">Economy</option>
+           </select>
+           <button id="calculate">Calculate</button>
+        </div>
+        <section>
+            <div>
+                <h2>Paint Supplies</h2>
+                <ul id="paint"></ul>
+            </div>
+             <div>
+                <h2>Carpet Supplies</h2>
+                <ul id="carpet"></ul>
+            </div>
+        </section>
+    </main>
+        <footer> 
+            <p>&copy;Savannah Longmore &bull;Project for Scripting</p>
+        </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
