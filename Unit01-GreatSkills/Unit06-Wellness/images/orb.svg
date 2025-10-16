@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 394.17 394.17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient-3);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-1, .cls-3 {
+        opacity: .5;
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#radial-gradient-2);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="197.08" cy="197.08" fx="197.08" fy="197.08" r="197.08" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c2e8f6"/>
+      <stop offset=".51" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#b7e4f5"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="224.57" cy="78.4" fx="224.57" fy="78.4" r="44.8" gradientTransform="translate(181.14 132.66) rotate(-41.07) scale(.48 .72)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-3" cx="131.32" cy="-41.87" fx="131.32" fy="-41.87" r="44.68" gradientTransform="translate(226.83 81.75) rotate(-71.38) scale(.21 .65)" xlink:href="#radial-gradient-2"/>
+  </defs>
+  <circle class="cls-2" cx="197.08" cy="197.08" r="197.08"/>
+  <path class="cls-3" d="M311.98,93.16c13.76,15.79,16.33,36.06,5.75,45.28-10.58,9.22-18.69-13.16-32.44-28.95-13.76-15.79-27.96-19.01-17.37-28.23,10.58-9.22,30.31-3.9,44.07,11.89Z"/>
+  <path class="cls-1" d="M212.2,40.29c17.92,6.04,30.88,15.62,28.93,21.4-1.95,5.78-15.9-3.14-33.74-9.4s-33.11-6.68-31.17-12.46,18.06-5.57,35.98.47Z"/>
+</svg>

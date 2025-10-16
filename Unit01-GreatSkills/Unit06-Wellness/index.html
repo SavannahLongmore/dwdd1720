@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+        
+
+</head>
+<body>
+    <div id="orb-background-container">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        </div>
+    <div id="main-container"> 
+    <div id="newProfile" class="showMe">
+        <h1>How Are You Feeling?</h1>
+        <h3>Please complete your emotional profile</h3>
+        <form>
+      <label><span>First Name:</span> <input type ="text" name="first" required></label>
+<label><span>Last Name:</span> <input type ="text" name="last" required></label>
+       <label><span> Emotional State:</span>
+    <select id="physical">
+        <option value="images/inside-out-joy.svg">Joyful</option>
+        <option value="images/inside-out-sadnessSVG.svg">Sad</option>
+        <option value="images/inside-out-anger.svg">Angry</option>
+        <option value="images/inside-out-fear.svg">Fearful</option>
+        <option value="images/inside-out-disgustSVG.svg">Disgusted</option>
+        <option value="images/inside-out-anxiety.svg">Anxious</option>
+        <option value="images/inside-out-envie.svg">Jealous</option>
+        <option value="images/inside-out-embarassed.svg">Embarassed</option>
+        <option value="images/inside-out-bordom.svg">Bored</option>
+        </select>
+        </label>
+        <input type="button" value="Save Profile" id="saveProfile">
+        </form>
+    </div>
+        
+    <div id="myProfile" class="hideMe">
+        <h1>Emotion Status!</h1>
+        <section>
+            <img id="emoji" src="" alt="Current Emotional Icon">
+            <p><span id="first"></span> <span id="last"></span> is currently feeling <span id="emotion"></span>!</p>
+
+        </section>
+        <button id="delProfile">Delete Profile</button>
+    </div>
+</div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
