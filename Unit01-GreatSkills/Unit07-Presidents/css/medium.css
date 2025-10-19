@@ -1,0 +1,12 @@
+/* css/medium.css (Starts applying around tablet size) */
+@media screen and (min-width: 768px) {
+    #cards {
+        /* Displays two cards in a row, each taking 1 fraction (1fr) of space */
+        grid-template-columns: repeat(2, 1fr); 
+        
+        gap: 20px;
+        max-width: 800px; /* Adjust max width to keep the two cards from being too wide */
+        padding: 20px;
+        margin: 0 auto; /* Keep it centered */
+    }
+}

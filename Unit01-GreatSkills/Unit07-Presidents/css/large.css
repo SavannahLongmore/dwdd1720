@@ -1,0 +1,13 @@
+/* css/large.css (Starts applying around desktop size) */
+@media screen and (min-width: 1200px) {
+    #cards {
+        /* Overrides the medium size and displays four cards in a row */
+        grid-template-columns: repeat(4, 1fr); 
+        
+        gap: 20px;
+        /* Increase max width to comfortably fit four columns */
+        max-width: 1200px; 
+        padding: 20px;
+        margin: 0 auto; /* Keep it centered */
+    }
+}
