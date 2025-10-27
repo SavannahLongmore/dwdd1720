@@ -1,0 +1,184 @@
+/* --- General Body & Container Setup --- */
+body {
+    /* Ensures the space outside the cards is dark/black */
+    background-color: #121212; 
+}
+#cards {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #121212; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 1rem;
+    font-size: 1.5em;
+    border-bottom: 1px solid #333; /* Subtle separation */
+}
+
+#view-controls img {
+    cursor: pointer;
+    width: 30px;
+    filter: invert(1); /* Makes icons white */
+    margin-left: 10px;
+}
+
+/* --- Base Card Styling (Used in both views) --- */
+.film-card {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.film-card h2 {
+    display: none; /* Hidden by default, visible in list view */
+    margin: 0;
+}
+
+.film-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.card-content {
+    padding: 10px 15px;
+    text-align: left;
+    /* Use a standard font-size and color for the text */
+    font-size: 0.9rem;
+    color: #444; 
+}
+
+.card-content .label {
+    color: #A00000; /* Dark Red for labels, but will be overridden in List View */
+    font-weight: bold;
+}
+
+/* ------------------------------------------- */
+/* --- GRID VIEW STYLING (The Red Screenshot) --- */
+/* ------------------------------------------- */
+
+body.grid-view #cards {
+    display: grid;
+    /* Responsive layout: 4 columns for large screens, shrinking gracefully */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+}
+
+body.grid-view .film-card {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding-bottom: 10px;
+    position: relative;
+    /* Red header bar styling */
+    padding-top: 25px; 
+}
+
+/* Red header bar */
+body.grid-view .film-card::before {
+    content: ""; /* Must have content for pseudo-element to appear */
+    display: block;
+    height: 25px;
+    background-color: #A00000; /* Dark Red header */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+body.grid-view .film-card h2 {
+    /* Put the title directly above the image, not in the red bar */
+    display: block;
+    font-size: 1.1em;
+    margin: 5px 0;
+    position: absolute; /* Place title over the red bar */
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 25px;
+    color: white; 
+    font-weight: bold;
+    z-index: 10;
+}
+
+body.grid-view .film-card img {
+    width: 90%;
+    max-height: 400px;
+    margin: 0 auto;
+}
+
+
+/* -------------------------------------------- */
+/* --- LIST VIEW STYLING (The Blue Screenshot) --- */
+/* -------------------------------------------- */
+
+body.list-view #cards {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column */
+    gap: 0; /* Remove gap between rows */
+}
+
+body.list-view .film-card {
+    display: grid;
+    /* 1. Header (auto height) 2. Image (100px fixed) 3. Content (1fr remaining) */
+    grid-template-columns: 100px 1fr; 
+    grid-template-rows: auto 1fr; 
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 5px; /* Slight space between list items */
+}
+
+/* Hide the pseudo-element in list view */
+body.list-view .film-card::before {
+    display: none;
+}
+
+/* Title Bar in List View (The Dark Blue strip) */
+body.list-view .film-card h2 {
+    display: flex; /* Make it visible */
+    grid-column: 1 / -1; /* Span across all columns */
+    background-color: #3f51b5; /* Dark Blue from screenshot */
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-radius: 0;
+    /* IMPORTANT: This needs to align perfectly with the border below it */
+    border-bottom: 1px solid #ccc;
+}
+
+/* Position the Poster Image */
+body.list-view .film-card img {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    width: 100px;
+    height: 100%;
+    object-fit: contain; /* Use 'contain' to show the whole poster */
+    padding: 5px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none; /* Hide top border to connect with H2 */
+}
+
+/* Position the Details Content */
+body.list-view .card-content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: white;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-left: none; /* Connects the visual layout */
+}
+
+/* Change the label color for the list view to match the screenshot */
+body.list-view .card-content .label {
+    color: #333; /* Change label color to black/dark gray */
+    font-weight: bold;
+}

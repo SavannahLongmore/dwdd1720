@@ -1,0 +1,352 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+background-color: white;
+}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0;}
+body {
+    background-color: #061228;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    
+    /* 🌠 FIX: REDEFINE STARS FOR BETTER VISIBILITY AND CONTRAST 🌠 */
+    background-image:
+        /* Layer 1: Tiny, bright stars (white dots) */
+        radial-gradient(white 1px, transparent 1px),
+        /* Layer 2: Medium, softer stars (lightgray dots) */
+        radial-gradient(rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+        /* Layer 3: Faint, large background nebulae (darker spots for depth) */
+        radial-gradient(rgba(255, 255, 255, 0.3) 3px, transparent 3px);
+
+    /* FIX: Increase sizes to space out the stars better */
+    background-size: 
+        100px 100px,   /* Layer 1: Tiny stars, repeating every 100px */
+        150px 150px, /* Layer 2: Medium stars, repeating every 150px */
+        200px 200px; /* Layer 3: Faint stars, repeating every 200px */
+
+    /* The starting position for the animation */
+    background-position: 
+        0 0,
+        0 0,
+        0 0; 
+
+    /* Apply the star animation */
+    animation: star-float 150s linear infinite alternate;
+}
+@keyframes star-float {
+    0% {
+        /* FIX: Must list all three starting positions (from the body style) */
+        background-position: 0 0, 0 0, 0 0; 
+    }
+    100% {
+        /* The final position must list all three layers */
+        background-position: 250px 250px, 
+                             -100px -100px, 
+                             500px 500px;
+    }
+}
+
+body.paintList div {
+    background-color: #061228;
+}
+body.paintList div h1 {
+   color: rgb(0, 0, 47);
+}
+body.paintGrid div h1 {
+    margin: 0;
+     /* 💥 GRADIENT BACKGROUND PROPERTIES for h1 💥 */
+    background: linear-gradient(
+        90deg, 
+       rgb(49, 238, 255), /* Solid green (no transparency here) */
+        rgb(122, 255, 50), /* Solid Yellow/Orange */
+        rgb(255, 156, 156)  /* Solid Blue */
+    );
+    background-size: 400% 400%; /* Make it large to slide */
+    
+    /* 💥 CRITICAL: Make the gradient show through the text 💥 */
+    -webkit-background-clip: text; /* For WebKit browsers (Chrome, Safari) */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Make text transparent for WebKit */
+    color: transparent; /* Fallback/standard for text transparency */
+    
+    /* Apply the animation to h1*/
+    animation: slide-color 8s ease-in-out infinite; 
+ /* Styling for the text */
+    font-size: 3rem;
+    font-weight: bold;
+}
+@keyframes slide-color {
+    0% {
+        /* Start with the gradient fully to the left (0%) */
+        background-position: 0% 50%;
+    }
+    50% {
+        /* Slide the gradient fully to the right (100%) */
+        background-position: 100% 50%;
+    }
+    100% {
+        /* This part returns to the start of the loop smoothly */
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/*Button switcher*/
+body.paintList section #list {
+    display: none;
+}
+body.paintList section #grid {
+    display: block;
+}
+body.paintGrid section #list {
+    display: block;
+}
+body.paintGrid section #grid {
+    display: none;
+}
+
+
+
+
+/*Grid Styling*/
+.mTitle p {
+    color:white !important;
+    margin: 0;
+}
+.mTitle {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+body.paintGrid .cardContainer p {
+    color:white;
+}
+body.paintGrid .cardContainer  {
+    display: grid;
+    grid-template-columns: repeat(minmax(auto-fit, 200px, 1fr));
+    gap: 10px;
+    
+}
+body.paintGrid .cardContainer figure {
+    background-color:rgb(5, 5, 32);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+body.paintGrid .cardContainer figure img {
+    position: absoute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 0;
+    border-radius: 5px;
+    position: static;
+    top: 0;
+    left:0 ;
+    z-index: 0;
+}
+body.paintGrid .cardContainer figure::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+       rgba(0, 0, 0, 0.05) 50%,
+        rgba(20, 0, 72, 0.85) 100%
+    );
+    z-index: 1;
+}
+body.paintGrid .cardContainer figure .mTitle {
+    position: static;
+    width: 100%;
+    z-index: auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    background: transparent;
+    color: white;
+}
+body.paintGrid .cardContainer figure .imageFigCaptionContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+    text-align: center;
+    padding: 0 10px 10px 10px;
+    color: white;
+}
+body.paintGrid .cardContainer figure .imageFigcaptionContainer .figCaptonDiv {
+    position: relative;
+    z-index: 3;
+}
+body.paintGrid .cardContainer figure:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+
+/*List Styling*/
+
+body.paintList div h1 {
+    margin: 0;
+         /* 💥 GRADIENT BACKGROUND PROPERTIES for h1 💥 */
+    background: linear-gradient(
+        90deg, 
+       rgb(23, 0, 225), /* Solid green (no transparency here) */
+        rgb(66, 198, 0), /* Solid Yellow/Orange */
+        rgb(238, 0, 0)  /* Solid Blue */
+    );
+    background-size: 400% 400%; /* Make it large to slide */
+    
+    /* 💥 CRITICAL: Make the gradient show through the text 💥 */
+    -webkit-background-clip: text; /* For WebKit browsers (Chrome, Safari) */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Make text transparent for WebKit */
+    color: transparent; /* Fallback/standard for text transparency */
+    
+    /* Apply the animation to h1*/
+    animation: slide-color 8s ease-in-out infinite; 
+ /* Styling for the text */
+    font-size: 3rem;
+    font-weight: bold;
+}
+body.paintList .cardContainer p {
+    color:rgb(255, 255, 255);
+
+}
+body.paintList .cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+body.paintList .cardContainer figure {
+    background-color: rgba(194, 0, 0, 0.2);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+    position: static;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+body.paintList .mTitle {
+    width: 100%;
+    text-align: left;
+    background-color: rgb(5, 5, 32);
+    color: white;
+    padding: 10px;
+    position: static;
+    z-index: auto;
+}
+body.paintList .mTitle p {
+    margin: 0;
+    font-weight: bold;
+}
+.paintList .imageFigCaptionContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    position: static !important;
+    z-index: auto !important;
+}
+.paintList .imageFigCaptionContainer img {
+    width: 200px;
+    height: 200px;
+    border-radius: 3px;
+    flex-shrink: 0;
+    padding: 0;
+    margin-right: 15px;
+}
+.paintList .imageFigCaptionContainer .figCaptionDiv {
+    flex-basis: 100%;
+    color: white;
+    text-align: left;
+    padding-left: 0;
+}
+.paintList .imageFigCaptionContainer .figCaptionDiv figCaption {
+    display: block;
+    color: white;
+    padding: 20px 0; 
+    font-size: 14px;
+}
+
+.paintList .imageFigCaptionContainer p {
+    padding-top: 0;
+    margin: 0;
+}
+body.paintList .cardContainer figure:hover {
+    transform: scale(1.03); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+h1 {
+    text-align: center;
+    padding: 0 65px 0 65px;
+}
+.mTitle {
+    color: white;
+}
+/* Image styling */
+body.paintGrid .cardContainer img
+{
+    max-width: 95vw;
+    border-radius: 5px;
+    
+}
+
+body.paintGrid .cardContainer figure {
+    text-align: center;
+    padding: 4px;
+}
+
+/* The following code is for the toggle button styling. */
+.Buttons{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position:relative;
+    background-color:#061228;
+}
+body.paintGrid section img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+body.paintList section img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: white;
+    background-color: #061228;
+    margin-top: 30px;
+}

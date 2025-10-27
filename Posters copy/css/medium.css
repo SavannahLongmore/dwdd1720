@@ -1,0 +1,8 @@
+@media only screen and (min-width: 35rem) {
+    .cardContainer .figureContainer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+} /* end media query*/

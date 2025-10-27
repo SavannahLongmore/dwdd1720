@@ -1,0 +1,176 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+background-color: rgb(41, 47, 82);
+}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0;}
+p {
+    color: white;
+
+}
+
+body.paintList div {
+    background-color: rgb(41, 47, 82);
+}
+body.paintList div h1 {
+    color: rgb(255, 255, 255);
+}
+body.paintGrid div h1 {
+    color: white;
+}
+
+/*Button switcher*/
+body.paintList section #list {
+    display: none;
+}
+body.paintList section #grid {
+    display: block;
+}
+body.paintGrid section #list {
+    display: block;
+}
+body.paintGrid section #grid {
+    display: none;
+}
+
+
+
+
+/*Grid Styling*/
+body.paintGrid .cardContainer  {
+    display: grid;
+    grid-template-columns: repeat(minmax(200px, 1fr));
+    gap: 10px;
+    background-color: rgb(41, 47, 82);
+}
+body.paintGrid .cardContainer figure {
+    background-color: rgb(10, 13, 31);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/*List Styling*/
+.mTitle {
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+   
+}
+.cardContainer {
+    width: 100%
+}
+.cardContainer .figureContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+ 
+}
+
+body.paintList .cardContainer figure {
+    /* background-color: lime;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: auto 1fr; */
+    border: 2px solid white;
+    margin: 16px;
+    ;
+}
+.paintList .imageFigCaptionContainer {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    .mImage {
+        width: 30%; /* Fixed width for the image */
+        border-radius: 5px ;
+        flex-basis: 20%;
+        ;
+    }
+    .figCaptionDiv {
+        flex-basis: 78%;
+        color: white;
+    }
+}
+.paintList .imageFigCaptionContainer p {
+    padding-top: 20px;
+}
+
+body.paintList .cardContainer{
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    gap: 5px; /* Add space between text items */
+}
+h1 {
+    text-align: center;
+    padding: 0 65px 0 65px;
+}
+.mTitle {
+    color: white;
+    border: 1px solid white;
+}
+/* Image styling */
+body.paintGrid .cardContainer img
+{
+    max-width: 95vw;
+    border-radius: 5px;
+    
+}
+
+body.paintGrid .cardContainer figure img
+body.paintList figure img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    
+}
+body.paintGrid .cardContainer figure {
+    text-align: center;
+    border: 2px solid white;
+    padding: 4px;
+}
+
+/* The following code is for the toggle button styling. */
+.Buttons{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    position:relative;
+    background-color:rgb(15, 19, 40);
+}
+body.paintGrid section img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+body.paintList section img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: white;
+    background-color: rgb(15, 19, 40);
+    margin-top: 30px;
+}
+/*This code changes the font*/
+*{
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+
+    font-style: normal;
+  }
+
+  
+    

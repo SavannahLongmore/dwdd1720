@@ -1,0 +1,131 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0;}
+
+body.paintList div {
+    background-color: red;
+}
+
+body.paintGrid div {
+    background-color: green;
+}
+body.paintList div h1 {
+    color: pink;
+}
+body.paintGrid div h1 {
+    color: lime;
+}
+
+/*Button switcher*/
+body.paintList section #list {
+    display: none;
+}
+body.paintList section #grid {
+    display: block;
+}
+body.paintGrid section #list {
+    display: block;
+}
+body.paintGrid section #grid {
+    display: none;
+}
+
+
+
+
+/*Grid Styling*/
+body.paintGrid .cardContainer  {
+    display: grid;
+    grid-template-columns: repeat(minmax(200px, 1fr));
+    gap: 10px;
+}
+body.paintGrid .cardContainer figure {
+    background-color: lime;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*List Styling*/
+.mTitle {
+    text-align: center;
+    padding: 10px;
+}
+
+.cardContainer .figureContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+body.paintList .cardContainer figure {
+    /* background-color: lime;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: auto 1fr; */
+    border: 1px solid black;
+    margin: 16px;
+}
+.paintList .imageFigCaptionContainer {
+    .mImage {
+         width: 30%; /*  Fixed width for the image  */
+
+        display: block;
+        border-radius: 5px;
+        flex-basis: 20%;
+    }
+    .figCaptionDiv {
+        flex-basis: 78%;
+    }
+
+}
+
+body.paintList .cardContainer {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    gap: 5px; /* Add space between text items */
+}
+h1 {
+    text-align: center;
+    padding: 0 10px 0 10px;
+}
+.mTitle {
+    color: blue;
+}
+/* Image styling */
+body.paintGrid .cardContainer img
+{
+    height: auto;
+    border-radius: 5px;
+}
+
+body.paintList figure img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+/* The following code is for the toggle button styling. */
+.Buttons{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+body.paintGrid section img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+body.paintList section img {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+}
+
+  
+    
