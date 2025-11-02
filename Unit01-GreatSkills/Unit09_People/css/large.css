@@ -1,0 +1,18 @@
+/* ----- Large screens ----- */
+@media only screen and (min-width: 60rem) {
+  nav {
+    flex-direction: row; /* horizontal on large screens */
+    justify-content: center;
+    align-items: center; 
+    gap: 10px;
+
+  }
+
+  #peopleHere {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+   button {
+    margin: 0 8px;  /* left/right spacing */
+  }
+} /* end large media query */

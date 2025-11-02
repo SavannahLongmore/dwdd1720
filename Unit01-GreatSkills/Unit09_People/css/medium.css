@@ -1,0 +1,31 @@
+/* ----- Medium screens ----- */
+@media only screen and (min-width: 35rem) {
+    h1 {
+    font-family: 'StarJedi', sans-serif;
+  color: #00eaff;
+  text-align: center;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+  letter-spacing: 2px;
+    color: white;
+    margin: 0 5vw;
+    margin-top: 20px;
+    padding: 0 40px;
+}
+nav {
+    display: flex;
+    flex-direction: row;       /* ← change from column to row */
+    justify-content: center;   
+    align-items: center;       /* align vertically */
+    gap: 15px;                 /* spacing between buttons */
+    flex-wrap: wrap;           /* allow wrapping if buttons overflow */
+  }
+
+  #peopleHere {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px;
+  }
+  button {
+    margin: 0 6px;
+  }
+} /* end medium media query */
