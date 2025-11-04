@@ -1,0 +1,5 @@
+@media only screen and (min-width: 60rem) {
+  #senatorsHere {
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  }
+} /* end media query*/
