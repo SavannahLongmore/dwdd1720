@@ -1,0 +1,212 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/* Natural box layout */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 12px;
+    background: black;
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+
+/* Twinkling star dots (JS will place them) */
+.stars {
+    width: 2px;
+    height: 2px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+    z-index: -1;
+}
+
+/* Deep space black base */
+.space-bg {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: -5;
+}
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0));
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  border-radius: 2px;
+  filter: blur(1px);
+  transform: rotate(-45deg); /* angle the streak */
+  animation: shoot 1.8s linear forwards;
+}
+
+/* Star tail*/
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 2px;
+  top: 0;
+  left: -160px;
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,1), rgba(255,255,255,0));
+  border-radius: 2px;
+  filter: blur(2px);
+}
+
+@keyframes shoot {
+  0% {
+    opacity: 0;
+    transform: translate(0,0) rotate(-45deg) scale(0.9);
+  }
+  10% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(450px, -450px) rotate(-45deg) scale(0.3);
+  }
+}
+/* Large nebula */
+.nebula-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(140, 0, 255, 0.8), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(0, 90, 200, 0.7), transparent 65%),
+    radial-gradient(circle at 50% 80%, rgba(200, 20, 90, 0.6), transparent 75%);
+  filter: blur(60px) brightness(1.3) contrast(1.5);
+}
+
+/* Dark dust clouds */
+.nebula-clouds {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 40% 50%, rgba(0, 0, 0, 0.8), transparent 60%),
+    radial-gradient(circle at 60% 70%, rgba(0, 0, 0, 0.7), transparent 70%),
+    radial-gradient(circle at 25% 80%, rgba(0, 0, 0, 0.6), transparent 70%);
+  filter: blur(60px);
+}
+
+/* Star grain overlay */
+.nebula-noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.1;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -2;
+}
+/* Star twinkle */
+@keyframes twinkle {
+    from {opacity: .3;}
+    to {opacity: 1;}
+}
+
+/* ----- layout styles below ----- */
+header h1 {
+    font-family: 'StarJedi', sans-serif;
+    font-size: 2rem;
+  color: #00eaff;
+  text-align: center;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+  letter-spacing: 2px;
+    color: white;
+    margin: 0 5vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0 40px;
+}
+@font-face {
+  font-family: 'StarJedi';
+  src: url('../fonts/Starjedi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 6px;
+  max-height: calc(100vh - 140px); /* header+footer space */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px;
+  margin-left: 10px;
+}
+nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.41);
+  border-radius: 10px;
+}
+nav button {
+  background: rgba(10,10,20,0.55);
+  border: 1px solid rgba(100,150,255,0.6);
+  color: #e8f1ff;
+  font-family: 'Libre Baskerville', serif;
+  padding: 6px;
+  margin: 2px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  backdrop-filter: blur(6px);
+  width: 100%;
+  text-align: left;
+}
+
+nav button:hover {
+  background: rgba(40,80,180,0.6);
+  border-color: cyan;
+  color: white;
+  text-shadow: 0 0 8px cyan;
+  transform: translateX(2px);
+}
+main figure {
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0,255,255,.3);
+     box-shadow: 0 0 20px rgba(0,255,255,.4); 
+    margin: 20px;
+    padding: 10px;
+    max-width: 600px;
+    width: auto;
+    position: relative;
+}
+
+main figure img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px 10px 10px 10px;
+  animation: fadeIn .7s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+figure figcaption {
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: rgba(255, 255, 255, 0.378);
+    margin-top: 30px;
+}

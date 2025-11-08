@@ -1,0 +1,33 @@
+@media only screen and (min-width: 35rem) {
+
+    body {
+        padding-left: 4vw;
+    padding-right: 4vw;
+        display: grid;
+        grid-template-columns: 160px auto;
+    }
+    nav {
+        display: block;
+        gap: 12px;
+    }
+    header {
+        grid-column: 1 / span 2;
+        
+    }
+    
+    main figure {
+         top: 5vh;
+  max-width: 650px;
+  width: 90%;
+  margin: 20px;
+}
+
+main figure img {
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+    footer {
+        grid-column: 1 / span 2;
+    }
+} /* end media query*/
