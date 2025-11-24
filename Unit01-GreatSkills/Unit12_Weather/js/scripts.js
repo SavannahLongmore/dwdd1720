@@ -4,7 +4,7 @@ const parentTag = document.querySelector('#weatherCard')
 // writing a default zipcode
 let zip = localStorage.getItem('myZipCode')
 if (zip == null) {
-    let defaultZip = "84005"
+    let defaultZip = ""
     localStorage.setItem('myZipCode', defaultZip)
     zip = defaultZip
 }
