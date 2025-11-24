@@ -1,0 +1,219 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    position: relative;
+    overflow-x: hidden;
+}
+/*stars overlay for the night sky*/
+body.night-sky::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px);
+
+  background-size:
+    150px 150px,
+    200px 200px,
+    250px 250px,
+    180px 180px,
+    300px 300px,
+    120px 120px,
+    220px 220px;
+
+  background-position:
+    0 0,
+    50px 80px,
+    120px 40px,
+    200px 100px,
+    30px 120px,
+    80px 200px,
+    160px 160px;
+
+  opacity: 0.9;
+  animation: twinkle 10s ease-in-out infinite;
+  z-index: -1;
+}
+header#topBar,
+main,
+footer#bottomBar {
+  position: relative;
+  z-index: 1;
+}
+@keyframes twinkle {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+  100% { opacity: 0.5; }
+}
+body.bg-clear-day {
+  background: radial-gradient(circle at top right, #ffdd55, #4facfe 60%);
+}
+
+/* Clear sky nighttime */
+body.bg-clear-night {
+  background: radial-gradient(circle at bottom, #0f0f27, #0e0a50, #2c5364);
+}
+
+/* Cloudy day */
+body.bg-clouds-day {
+  background: linear-gradient(to bottom, #d7d2cc, #304352);
+}
+
+/* Cloudy night */
+body.bg-clouds-night {
+  background: linear-gradient(to bottom, #2c3e50, #4b79a1);
+}
+
+/* Rainy day */
+body.bg-rain-day {
+  background: linear-gradient(to bottom, #5f9ea0, #2f4f4f);
+}
+
+/* Rainy night */
+body.bg-rain-night {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+}
+
+/* Snow day */
+body.bg-snow-day {
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+}
+
+/* Snow night */
+body.bg-snow-night {
+  background: linear-gradient(to bottom, #232526, #414345);
+}
+header#topBar{
+    width: 100%;
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+  color: white;
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0 0 10px 10px;
+    font-weight: 600;
+
+}
+#town {
+    padding: .25rem 0;
+}
+#settings img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+aside {
+    display: none;
+}
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;     /* center horizontally */
+    align-items: flex-start;     /* push card toward top */
+    padding-top: 1rem;           /* small gap under header */
+}
+#weatherCard {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  color: white;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border: 2px solid rgba(0,0,0,0.2);
+}
+#weatherCard .date {
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: .5rem 20px ;
+    border-radius: 10px 10px 10px 10px;
+}
+#weatherCard .temperature {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 4px 0 12px;
+}
+#weatherCard .feels-like,
+#weatherCard .humidity
+#weatherCard .weather-main {
+    font-size: 0.95rem;
+    margin: 4px 0;
+}
+aside.show {
+    display: block;
+     position: absolute;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    padding: 1rem 2vw;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #222;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+   
+}
+aside p {
+    margin-bottom: 0.5rem;
+}
+aside input {
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+aside.show {
+    display: block;
+     position: absolute;
+    top: 49px;
+    height: 300px;
+    left: 10px;
+    right: 10px;
+    padding: 1rem 2vw;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.921);
+    color: black;
+    font-size: 600;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+   
+}
+footer#bottomBar{
+    width: 100;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.25);
+  color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    Border-radius: 10px 10px 0 0;
+    bottom: 0;
+}

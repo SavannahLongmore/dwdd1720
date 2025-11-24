@@ -1,0 +1,6 @@
+@media only screen and (min-width: 60rem) {
+#weatherCard {
+    width: 60%;
+    max-width: 700px;
+  }
+} /* end media query*/
