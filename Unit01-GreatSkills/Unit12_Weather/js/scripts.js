@@ -12,7 +12,7 @@ if (zip == null) {
 console.log(zip)
 
 // setting the path to the API on weather
-const myKey = "596cc709fa8c54a3eac7275544bd42d6"
+const myKey = "289145b79339b1b08813d741cbde7b87"
 const myPath = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${myKey}&units=imperial`
 
 fetch(myPath)
