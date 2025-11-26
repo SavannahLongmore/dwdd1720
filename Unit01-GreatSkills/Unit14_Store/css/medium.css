@@ -1,0 +1,40 @@
+/* Medium screens: 3 columns */
+@media (min-width: 600px) {
+ /* medium.css */
+
+/* 3 columns for nav */
+nav {
+  display: flex;
+  justify-content: center;     /* centers the whole row */
+  align-items: center;
+  flex-wrap: nowrap;          /* ✅ forces ONE row */
+  gap: 0.75rem;
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 0.75rem 1rem 1rem;
+  overflow-x: auto;           /* ✅ prevents overflow on tiny screens */
+}
+
+/* side-by-side card layout on medium+ */
+.animal-card {
+  flex-direction: row;        /* 👈 image + text side by side */
+  align-items: flex-start;
+  max-width: 900px;
+  padding: 2.5rem 2rem;
+  margin: 2rem auto 3rem;
+}
+
+/* image a bit larger and no bottom margin */
+.animal-card img {
+  width: 320px;
+  max-width: 40%;
+  margin-bottom: 0;
+  margin: 30px;
+}
+
+/* left-align the title inside the text column */
+.animal-text h2 {
+  text-align: left;
+}
+
+}

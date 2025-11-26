@@ -1,0 +1,30 @@
+/* Large screens: 4 columns */
+@media (min-width: 900px) {
+ /* large.css */
+
+/* 4 columns for nav */
+nav {
+  display: flex;
+  justify-content: center;     /* centers the whole row */
+  align-items: center;
+  flex-wrap: nowrap;          /* ✅ forces ONE row */
+  gap: 0.75rem;
+  max-width: 100%;
+  margin: 1rem auto;
+  padding: 0.75rem 1rem 1rem;
+  overflow-x: auto;           /* ✅ prevents overflow on tiny screens */
+}
+
+/* you can keep card layout same as medium, or tweak spacing if you want */
+.animal-card {
+  max-width: 1100px;
+}
+
+/* maybe bump the image a bit bigger on very large screens */
+.animal-card img {
+  width: 360px;
+  max-width: 40%;
+  margin: 30px;
+}
+
+}
